@@ -16,7 +16,7 @@ class ParkingHandler implements HandlerInterface
      * ParkingHandler constructor.
      * @param ParkingService $parkingService
      */
-    public function __construct(ParkingService &$parkingService)
+    public function __construct(ParkingService&$parkingService)
     {
         $this->parkingService = $parkingService;
     }

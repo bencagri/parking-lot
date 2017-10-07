@@ -17,7 +17,7 @@ class ArrivalsHandler implements HandlerInterface
      * ArrivalsHandler constructor.
      * @param ParkingService $parkingService
      */
-    public function __construct(ParkingService &$parkingService)
+    public function __construct(ParkingService&$parkingService)
     {
         $this->parkingService = $parkingService;
     }
@@ -29,7 +29,7 @@ class ArrivalsHandler implements HandlerInterface
      * @throws ParkingIsFullException
      * @throws \Exception
      */
-    public function handle(&$parameters,$key)
+    public function handle(&$parameters, $key)
     {
         foreach ($parameters as $gate => $queue) {
             /** @var EntryBarrierModel $entry */

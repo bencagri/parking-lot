@@ -48,7 +48,7 @@ class ParkingSimulator
 
         $parameters    = [];
 
-        if($input_file){ //try to read the file
+        if ($input_file) { //try to read the file
             if (file_exists($input_file)) {
                 $this->input = file_get_contents($input_file);
             }
@@ -83,7 +83,7 @@ class ParkingSimulator
         }
 
         //set default parameters
-        if(empty($parameters)){
+        if (empty($parameters)) {
             $parameters = $this->getDefaultParameters();
         }
         $this->setDefaultParameters($parameters);
@@ -122,8 +122,8 @@ class ParkingSimulator
 
         for ($step = 0; $step < $steps; $step++) {
 
-            (new ArrivalsHandler($this->service))->handle($this->parameters['arrivals'],$step);
-            (new ParkingHandler($this->service))->handle($this->parameters['parkings'],$step);
+            (new ArrivalsHandler($this->service))->handle($this->parameters['arrivals'], $step);
+            (new ParkingHandler($this->service))->handle($this->parameters['parkings'], $step);
             (new ExitsHandler($this->service))->handle($this->parameters['exit_que'], $step);
 
             $status = $this->service->getStatus();
