@@ -21,22 +21,22 @@ class ExitBarrierModel extends AbstractModel
         $this->totalExits = 0;
     }
 
-    public function getExits(){
+    public function getExits() {
         return max($this->totalExits, 0);
     }
 
-    public function exitRequested(){
+    public function exitRequested() {
         //will wait for answer and will open if confirmed or missing
         $confirm = $this->announce(EventsInterface::MSG_DEPART);
-        if($confirm !== false){ //open also in case of failure
+        if ($confirm !== false) { //open also in case of failure
             $this->open();
             return true;
         }
         return false;
     }
 
-    public function exitDetected(){
-        $this->totalExits ++;
+    public function exitDetected() {
+        $this->totalExits++;
         $this->close(); // the exit is detected locally so it's safe to close
         return $this->announce(EventsInterface::MSG_EXIT);
     }

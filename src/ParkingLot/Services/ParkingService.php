@@ -43,7 +43,7 @@ class ParkingService implements ListenerInterface
     public static function getInstance(EventsInterface $parkingEvent = null)
     {
         if (empty(self::$instance)) {
-            $service              = new ParkingService();
+            $service = new ParkingService();
             $service->parkingEvent = $parkingEvent ?: ParkingEvent::getInstance();
             $service->subscribe();
             self::$instance = $service;
@@ -248,7 +248,7 @@ class ParkingService implements ListenerInterface
                 return true;
         }
 
-        return false;//unknown message
+        return false; //unknown message
     }
 
     /**

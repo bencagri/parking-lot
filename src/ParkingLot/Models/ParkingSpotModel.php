@@ -19,7 +19,7 @@ class ParkingSpotModel extends AbstractModel
      *
      * Signals park event
      */
-    public function parkDetected(){
+    public function parkDetected() {
         $this->isTaken = true;
         return $this->announce(EventsInterface::MSG_PARK);
     }
@@ -29,7 +29,7 @@ class ParkingSpotModel extends AbstractModel
      *
      * Signals unpark event
      */
-    public function unparkDetected(){
+    public function unparkDetected() {
         $this->isTaken = false;
         return $this->announce(EventsInterface::MSG_UNPARK);
     }
@@ -39,17 +39,17 @@ class ParkingSpotModel extends AbstractModel
      *
      * the current status
      */
-    public function isEmpty(){
-        return ! $this->isTaken;
+    public function isEmpty() {
+        return !$this->isTaken;
     }
 
-    public function init(){
+    public function init() {
         $this->isTaken = false;
     }
 
     public function fail($message = '')
     {
-        parent::fail($message?:'Parking spot failure');
+        parent::fail($message ?: 'Parking spot failure');
     }
 
     public function on($message)

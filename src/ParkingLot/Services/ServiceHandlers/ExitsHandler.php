@@ -15,7 +15,7 @@ class ExitsHandler implements HandlerInterface
      * ExitsHandler constructor.
      * @param $parkingService
      */
-    public function __construct(ParkingService &$parkingService)
+    public function __construct(ParkingService&$parkingService)
     {
         $this->parkingService = $parkingService;
     }

@@ -37,7 +37,7 @@ class EntryBarrierModel extends AbstractModel
     {
 
         $this->close();
-        parent::fail($message?: 'Entry failure');
+        parent::fail($message ?: 'Entry failure');
     }
 
     /**
