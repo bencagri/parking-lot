@@ -1,6 +1,8 @@
 Parking Lot Problem
 =======================
-see [the specifications](docs/readme.md) under docs directory
+see [the specifications](docs/readme.md) under docs directory 
+
+[![Build Status](https://travis-ci.org/bencagri/parking-lot.svg?branch=master)](https://travis-ci.org/bencagri/parking-lot)
 
 Installation
 ------------
